@@ -3,7 +3,7 @@
 
 **模拟数据，非真实数据，仅供学习。** 渠道为抖系、淘系、京系，金额为人民币元（CNY）。
 
-[打开HTML报告](https://bbloey.github.io/domestic-commerce-analytics/) · [构建流程](docs/BUILD.md) · [数据口径](docs/DATA_CONTRACT.md) · [数据说明](data/README.md)
+[打开HTML报告](https://bbloey.github.io/domestic-commerce-analytics/index.html) · [构建流程](docs/BUILD.md) · [数据口径](docs/DATA_CONTRACT.md) · [数据说明](data/README.md)
 
 ## 1. 数据处理代码
 [src/model.py](src/model.py)包含三表校验、月度聚合、去重订单与客户、RFM分群及模拟数据生成。
@@ -57,7 +57,7 @@ python -m pip install -r requirements.txt
 python start.py
 ```
 
-公网网站地址为：[国内电商经营分析看板](https://bbloey.github.io/domestic-commerce-analytics/)。
+公网网站地址为：[国内电商经营分析看板](https://bbloey.github.io/domestic-commerce-analytics/index.html)。
 
 公网版提供报告浏览、图表筛选和数据源模块展示。上传、SQL 和保存修改需运行上述 Python 服务；Windows 也可双击 `start.cmd`，在自动打开的本地完整网站中操作。
 
