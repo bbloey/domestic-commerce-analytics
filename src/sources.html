@@ -1,0 +1,34 @@
+<section class="page" id="page-sources" role="tabpanel">
+ <div class="section-head"><div><h2>数据源</h2><p class="source-muted">先确认数据与指标口径，再连接、预览和编辑，最后应用到看板。</p></div><a class="btn btn-secondary" href="/api/template.xlsx">下载 Excel 数据模板</a></div>
+ <!-- SOURCE_GUIDE -->
+ <div class="source-operation-heading"><h3>连接与更新数据</h3><p class="source-muted">以下操作仅在本地完整服务中可用；预览与草稿不会直接修改看板。</p></div>
+ <div class="source-cards">
+  <article class="card source-card"><span class="source-icon">↥</span><h3>Excel / CSV</h3><p>支持 .xlsx 工作簿与 .csv 表格，可选工作表并映射字段。</p><label class="btn btn-primary source-upload">上传文件<input id="source-file" type="file" accept=".xlsx,.csv" aria-label="上传 Excel 或 CSV"></label></article>
+  <article class="card source-card"><span class="source-icon">⌘</span><h3>SQL 数据库</h3><p>SQLite 本地直连；PostgreSQL / MySQL 通过本机服务连接。</p><button class="btn btn-secondary" id="source-sql-toggle">配置 SQL 连接</button></article>
+  <article class="card source-card"><span class="source-icon">▦</span><h3>在线编辑</h3><p>直接修改单元格、添加或删除行。应用前校验，支持撤销上次更新。</p><button class="btn btn-secondary" id="source-edit-focus">编辑当前表</button></article>
+ </div>
+ <article class="card source-panel" id="source-sql-panel" hidden>
+  <h3>SQL 连接 <span class="source-muted">· 密码仅用于本次请求，不写入磁盘</span></h3>
+  <div class="source-form">
+   <label>数据库类型<select id="sql-engine"><option value="sqlite">SQLite（内置可体验数据库）</option><option value="postgres">PostgreSQL</option><option value="mysql">MySQL</option></select></label>
+   <label id="sqlite-path-label">数据库文件路径<input id="sql-path"></label>
+   <div class="source-remote" id="sql-remote" hidden><label>主机<input id="sql-host" placeholder="db.example.com"></label><label>端口<input id="sql-port" type="number" value="5432"></label><label>数据库<input id="sql-database"></label><label>只读用户名<input id="sql-user" autocomplete="off"></label><label>密码<input id="sql-password" type="password" autocomplete="off"></label></div>
+  </div>
+  <label class="source-query-label" for="sql-query">只读查询（列名可用 AS 映射为模板字段）</label><textarea id="sql-query" rows="4" spellcheck="false">SELECT * FROM orders</textarea>
+  <div class="source-toolbar"><button class="btn btn-primary" id="source-query">连接并查询预览</button><p class="source-muted">查询不会直接覆盖看板；需要映射、检查并点击“应用到看板”。外部数据库需安装对应驱动，使用只读账户与 TLS。</p></div>
+ </article>
+ <article class="card source-panel" id="source-import-panel" hidden>
+  <div class="source-toolbar"><h3>导入预览与字段映射</h3><label>工作表 <select id="source-sheet"></select></label><button class="btn btn-secondary" id="source-import-cancel">关闭导入</button></div>
+  <p class="source-muted">先选择下方的目标数据表，再为每个必需字段选择源列。载入编辑器仅替换草稿，应用后才更新看板。</p>
+  <div id="source-mapping" class="source-mapping"></div><div class="table-wrap" id="source-preview"></div>
+  <button class="btn btn-primary" id="source-map-apply">载入编辑器</button>
+ </article>
+ <article class="card source-panel">
+  <div class="source-toolbar"><h3>数据表工作区</h3><label>当前数据表 <select id="source-table"><option value="orders">订单明细 · orders</option><option value="traffic">渠道流量 · traffic</option><option value="targets">月度目标 · targets</option></select></label><a class="btn btn-secondary" id="source-export" href="/api/export/orders.csv">导出当前 CSV</a></div>
+  <div id="source-meta" class="source-meta"></div><p id="source-help" class="source-muted"></p>
+  <div class="source-toolbar"><button class="btn btn-secondary" id="source-add">＋ 添加行</button><button class="btn btn-secondary" id="source-discard">放弃草稿</button><button class="btn btn-secondary" id="source-undo">撤销上次更新</button><button class="btn btn-primary" id="source-save">应用到看板</button></div>
+  <p id="source-message" role="status" aria-live="polite">正在载入本地数据…</p>
+  <div class="table-wrap source-editor" id="source-editor"></div>
+  <div class="source-toolbar source-pagination"><button class="btn btn-secondary" id="source-prev">上一页</button><span id="source-page"></span><button class="btn btn-secondary" id="source-next">下一页</button><span class="source-muted">每页 30 行 · 所有修改会一起应用</span></div>
+ </article>
+</section>

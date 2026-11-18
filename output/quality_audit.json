@@ -1,0 +1,108 @@
+{
+  "data_mode": "synthetic learning data",
+  "currency": "CNY",
+  "table_rows": {
+    "orders": 3450,
+    "traffic": 72,
+    "targets": 4
+  },
+  "quality_checks": [
+    {
+      "month": "2026-01",
+      "check": "module_05_product_growth",
+      "difference_cny": -0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-01",
+      "check": "module_06_sku_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-01",
+      "check": "module_07_channel_product_gmv",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-01",
+      "check": "customer_hour",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-02",
+      "check": "module_05_product_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-02",
+      "check": "module_06_sku_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-02",
+      "check": "module_07_channel_product_gmv",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-02",
+      "check": "customer_hour",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-03",
+      "check": "module_05_product_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-03",
+      "check": "module_06_sku_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-03",
+      "check": "module_07_channel_product_gmv",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-03",
+      "check": "customer_hour",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-04",
+      "check": "module_05_product_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-04",
+      "check": "module_06_sku_growth",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-04",
+      "check": "module_07_channel_product_gmv",
+      "difference_cny": 0.0,
+      "passed": true
+    },
+    {
+      "month": "2026-04",
+      "check": "customer_hour",
+      "difference_cny": 0.0,
+      "passed": true
+    }
+  ],
+  "total_gmv_cny": 1444944.91
+}

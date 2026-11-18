@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.log
+.env
+
+local-data/
+__pycache__/
+*.log
+.venv/
